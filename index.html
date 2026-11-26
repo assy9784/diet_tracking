@@ -12,17 +12,6 @@
 <link rel="apple-touch-icon" href="./icon.svg">
 <title>Body & Balance | ダイエット記録</title>
 <style>
-*,
-*::before,
-*::after {
-  box-sizing:border-box;
-}
-  input[type="date"]{
-    width:100%;
-    max-width:100%;
-    min-width:0;
-    box-sizing:border-box;
-  }
 :root{--bg:#fbf7f4;--card:#fff;--ink:#3f3937;--muted:#8e8580;--line:#eee5df;--pink:#d99c9e;--pink2:#f7e7e5;--sage:#8da99a;--sage2:#eaf1ec;--gold:#c5a574;--shadow:0 8px 28px #725b4b12}
 *{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--ink);font-family:-apple-system,BlinkMacSystemFont,"Hiragino Kaku Gothic ProN","Noto Sans JP",sans-serif;font-size:14px;padding-bottom:calc(82px + env(safe-area-inset-bottom))}
 button,input,select{font:inherit}button{cursor:pointer}.app{max-width:780px;margin:auto;padding:20px 16px 28px}.top{display:flex;align-items:center;justify-content:space-between;margin:4px 2px 20px}.brand{font-family:Georgia,serif;font-size:25px;letter-spacing:.3px}.sub{font-size:11px;color:var(--muted);margin-top:4px}.today{font-size:11px;color:var(--muted);background:#fff;padding:8px 11px;border-radius:20px;border:1px solid var(--line)}
@@ -31,7 +20,30 @@ button,input,select{font:inherit}button{cursor:pointer}.app{max-width:780px;marg
 .view{display:none}.view.active{display:block}.section-title{font-size:17px;font-weight:700;margin:22px 2px 12px}.muted{color:var(--muted)}.small{font-size:11px;color:var(--muted)}
 .card{background:var(--card);border:1px solid var(--line);border-radius:19px;padding:16px;margin-bottom:12px;box-shadow:var(--shadow)}.hero{background:linear-gradient(135deg,#f8e9e6,#f7f0e9);border:0;padding:20px}.hero-label{font-size:12px;color:#8d6867}.hero-number{font-family:Georgia,serif;font-size:35px;margin:5px 0}.hero-foot{font-size:11px;color:#8d7770}
 .grid2{display:grid;grid-template-columns:1fr 1fr;gap:10px}.stat{background:#fff;border:1px solid var(--line);border-radius:16px;padding:14px}.stat .k{font-size:11px;color:var(--muted)}.stat .v{font-size:22px;font-weight:700;margin-top:5px}.stat .u{font-size:11px;color:var(--muted);margin-left:3px}
-label{display:block;font-size:12px;color:#746a65;margin:0 0 6px}input,select{width:100%;border:1px solid var(--line);border-radius:11px;padding:11px 12px;background:#fff;color:var(--ink);outline:none}input:focus,select:focus{border-color:var(--pink)}.field{margin-bottom:12px}.row{display:flex;gap:9px;align-items:end}.row>*{flex:1;min-width:0}
+label{display:block;font-size:12px;color:#746a65;margin:0 0 6px}input,select{width:100%;border:1px solid var(--line);border-radius:11px;padding:11px 12px;background:#fff;color:var(--ink);outline:none}input:focus,select:focus{border-color:var(--pink)}
+/* iPhone Safariの日付入力欄のはみ出し対策 */
+#recordDate{
+  display:block;
+  width:100%;
+  min-width:0;
+  max-width:100%;
+  box-sizing:border-box;
+  min-height:44px;
+  font-size:16px;
+  -webkit-appearance:none;
+  appearance:none;
+}
+#recordDate::-webkit-date-and-time-value{
+  text-align:left;
+}
+#recordDate::-webkit-datetime-edit{
+  padding:0;
+}
+.card,
+.field{
+  min-width:0;
+}
+.field{margin-bottom:12px}.row{display:flex;gap:9px;align-items:end}.row>*{flex:1;min-width:0}
 .btn{border:0;border-radius:12px;padding:12px 15px;background:var(--pink);color:white;font-weight:700}.btn.secondary{background:var(--sage2);color:#587566}.btn.ghost{background:#f7f2ef;color:#756963}.btn.danger{background:#faeeee;color:#a45c5c}.btn.full{width:100%}.btn.smallbtn{padding:7px 10px;font-size:11px}
 .chips{display:flex;flex-wrap:wrap;gap:7px;margin:8px 0 14px}.chip{border:1px solid var(--line);background:#fff;border-radius:18px;padding:8px 11px;color:#706762;font-size:12px}.chip.selected{background:var(--sage2);border-color:#b8cabe;color:#547160}
 .exercise{border:1px solid var(--line);border-radius:14px;padding:12px;margin:9px 0;background:#fff}.exercise-head{display:flex;justify-content:space-between;align-items:center;margin-bottom:10px;font-weight:700}.exercise-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:8px}.exercise-grid label{font-size:10px}.exercise-grid input{padding:9px 8px}.exercise-grid .wide{grid-column:span 3}
