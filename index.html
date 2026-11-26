@@ -12,6 +12,17 @@
 <link rel="apple-touch-icon" href="./icon.svg">
 <title>Body & Balance | ダイエット記録</title>
 <style>
+*,
+*::before,
+*::after {
+  box-sizing:border-box;
+}
+  input[type="date"]{
+    width:100%;
+    max-width:100%;
+    min-width:0;
+    box-sizing:border-box;
+  }
 :root{--bg:#fbf7f4;--card:#fff;--ink:#3f3937;--muted:#8e8580;--line:#eee5df;--pink:#d99c9e;--pink2:#f7e7e5;--sage:#8da99a;--sage2:#eaf1ec;--gold:#c5a574;--shadow:0 8px 28px #725b4b12}
 *{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--ink);font-family:-apple-system,BlinkMacSystemFont,"Hiragino Kaku Gothic ProN","Noto Sans JP",sans-serif;font-size:14px;padding-bottom:calc(82px + env(safe-area-inset-bottom))}
 button,input,select{font:inherit}button{cursor:pointer}.app{max-width:780px;margin:auto;padding:20px 16px 28px}.top{display:flex;align-items:center;justify-content:space-between;margin:4px 2px 20px}.brand{font-family:Georgia,serif;font-size:25px;letter-spacing:.3px}.sub{font-size:11px;color:var(--muted);margin-top:4px}.today{font-size:11px;color:var(--muted);background:#fff;padding:8px 11px;border-radius:20px;border:1px solid var(--line)}
