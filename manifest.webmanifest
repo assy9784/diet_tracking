@@ -1,0 +1,16 @@
+{
+  "name": "Body & Balance - ダイエット記録",
+  "short_name": "Body & Balance",
+  "start_url": "./",
+  "display": "standalone",
+  "background_color": "#fbf7f4",
+  "theme_color": "#fbf6f2",
+  "icons": [
+    {
+      "src": "./icon.svg",
+      "sizes": "any",
+      "type": "image/svg+xml",
+      "purpose": "any maskable"
+    }
+  ]
+}
