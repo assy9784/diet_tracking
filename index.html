@@ -13,7 +13,7 @@
 <title>Body & Balance | ダイエット記録</title>
 <style>
 *,*::before,*::after{box-sizing:border-box}
-.app,.view,.card,.field{min-width:0}.date-field{width:100%;max-width:100%}#recordDate{display:block;width:100%;min-width:0;max-width:100%;font-size:16px}
+.app,.view,.card,.field,.date-field{min-width:0}.date-field{display:block;width:100%;max-width:100%;overflow:hidden}#recordDate{display:block;box-sizing:border-box;width:100%;min-width:0;max-width:100%;min-inline-size:0;font-size:16px;}
 
 :root{--bg:#fbf7f4;--card:#fff;--ink:#3f3937;--muted:#8e8580;--line:#eee5df;--pink:#d99c9e;--pink2:#f7e7e5;--sage:#8da99a;--sage2:#eaf1ec;--gold:#c5a574;--shadow:0 8px 28px #725b4b12}
 *{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--ink);font-family:-apple-system,BlinkMacSystemFont,"Hiragino Kaku Gothic ProN","Noto Sans JP",sans-serif;font-size:14px;padding-bottom:calc(82px + env(safe-area-inset-bottom))}
@@ -23,16 +23,17 @@ button,input,select{font:inherit}button{cursor:pointer}.app{max-width:780px;marg
 .view{display:none}.view.active{display:block}.section-title{font-size:17px;font-weight:700;margin:22px 2px 12px}.muted{color:var(--muted)}.small{font-size:11px;color:var(--muted)}
 .card{background:var(--card);border:1px solid var(--line);border-radius:19px;padding:16px;margin-bottom:12px;box-shadow:var(--shadow)}.hero{background:linear-gradient(135deg,#f8e9e6,#f7f0e9);border:0;padding:20px}.hero-label{font-size:12px;color:#8d6867}.hero-number{font-family:Georgia,serif;font-size:35px;margin:5px 0}.hero-foot{font-size:11px;color:#8d7770}
 .grid2{display:grid;grid-template-columns:1fr 1fr;gap:10px}.stat{background:#fff;border:1px solid var(--line);border-radius:16px;padding:14px}.stat .k{font-size:11px;color:var(--muted)}.stat .v{font-size:22px;font-weight:700;margin-top:5px}.stat .u{font-size:11px;color:var(--muted);margin-left:3px}
-label{display:block;font-size:12px;color:#746a65;margin:0 0 6px}input,select{width:100%;border:1px solid var(--line);border-radius:11px;padding:11px 12px;background:#fff;color:var(--ink);outline:none}input:focus,select:focus{border-color:var(--pink)}.field{margin-bottom:12px}.row{display:flex;gap:9px;align-items:end}.row>*{flex:1;min-width:0}
+label{display:block;font-size:12px;color:#746a65;margin:0 0 6px}input,select,textarea{display:block;box-sizing:border-box;width:100%;min-width:0;max-width:100%;font-size:16px;border:1px solid var(--line);border-radius:11px;padding:11px 12px;background:#fff;color:var(--ink);outline:none}input:focus,select:focus{border-color:var(--pink)}.field{margin-bottom:12px}.row{display:flex;gap:9px;align-items:end}.row>*{flex:1;min-width:0}
 .btn{border:0;border-radius:12px;padding:12px 15px;background:var(--pink);color:white;font-weight:700}.btn.secondary{background:var(--sage2);color:#587566}.btn.ghost{background:#f7f2ef;color:#756963}.btn.danger{background:#faeeee;color:#a45c5c}.btn.full{width:100%}.btn.smallbtn{padding:7px 10px;font-size:11px}
 .chips{display:flex;flex-wrap:wrap;gap:7px;margin:8px 0 14px}.chip{border:1px solid var(--line);background:#fff;border-radius:18px;padding:8px 11px;color:#706762;font-size:12px}.chip.selected{background:var(--sage2);border-color:#b8cabe;color:#547160}
 .exercise{border:1px solid var(--line);border-radius:14px;padding:12px;margin:9px 0;background:#fff}.exercise-head{display:flex;justify-content:space-between;align-items:center;margin-bottom:10px;font-weight:700}.exercise-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:8px}.exercise-grid label{font-size:10px}.exercise-grid input{padding:9px 8px}.exercise-grid .wide{grid-column:span 3}
 .listitem{display:flex;justify-content:space-between;align-items:center;padding:11px 2px;border-bottom:1px solid var(--line)}.listitem:last-child{border:0}.pill{font-size:10px;padding:5px 8px;border-radius:20px;background:var(--sage2);color:#587566}
 .chart-wrap{height:190px;position:relative}.chart-wrap canvas{width:100%;height:100%}.empty{padding:24px 12px;text-align:center;color:var(--muted);font-size:12px;background:#faf7f5;border-radius:14px}
-.calendar{display:grid;grid-template-columns:repeat(7,1fr);gap:5px}.dayname{text-align:center;color:var(--muted);font-size:10px;padding:6px 0}.day{min-height:54px;background:#fff;border:1px solid var(--line);border-radius:10px;padding:6px 3px;text-align:center;font-size:12px}.day.dim{opacity:.3}.day.today{border:1.5px solid var(--pink)}.marks{display:flex;justify-content:center;gap:3px;margin-top:6px}.dot{width:6px;height:6px;border-radius:50%;display:inline-block}.dot.gym{background:var(--sage)}.dot.weight{background:var(--pink)}
+.calendar{display:grid;grid-template-columns:repeat(7,1fr);gap:5px}.dayname{text-align:center;color:var(--muted);font-size:10px;padding:6px 0}.day{min-height:54px;background:#fff;border:1px solid var(--line);border-radius:10px;padding:6px 3px;text-align:center;font-size:12px}.day.dim{opacity:.3}.day.today{border:1.5px solid var(--pink)}.marks{display:flex;justify-content:center;gap:3px;margin-top:6px}.dot{width:6px;height:6px;border-radius:50%;display:inline-block}.dot.gym{background:var(--sage)}.dot.weight{background:var(--pink)}.calendar-legend{display:flex;align-items:center;gap:12px;font-size:11px;color:var(--muted);white-space:nowrap}.calendar-legend span{display:inline-flex;align-items:center;gap:5px}.calendar-legend .dot{width:8px;height:8px}
 .header-row{display:flex;align-items:center;justify-content:space-between;margin-bottom:12px}.month-nav{display:flex;gap:8px;align-items:center}.month-nav button{border:0;background:#f5eeea;border-radius:9px;padding:6px 10px;color:#786c65}
 .toast{position:fixed;z-index:10;left:50%;bottom:90px;transform:translateX(-50%);background:#403936;color:#fff;padding:10px 16px;border-radius:30px;font-size:12px;opacity:0;pointer-events:none;transition:.2s}.toast.show{opacity:1}
 @media(min-width:650px){.app{padding:28px 24px}.tabs{position:sticky;top:0;bottom:auto;border:1px solid var(--line);border-radius:16px;margin:0 auto 22px;max-width:730px}.tabs button{font-size:12px}.tabs .ico{display:inline;margin-right:6px}.app{padding-top:22px}}
+input,select,textarea{font-size:16px!important}
 </style>
 </head>
 <body>
@@ -50,7 +51,7 @@ label{display:block;font-size:12px;color:#746a65;margin:0 0 6px}input,select{wid
 <section class="view" id="record">
   <div class="section-title">記録する</div>
   <div class="card"><div class="field date-field"><label for="recordDate">記録日</label><input type="date" id="recordDate"></div><div class="section-title" style="margin:8px 0 12px;font-size:15px">体重</div><div class="row"><div><label>体重（kg）</label><input type="number" id="weightValue" placeholder="例：55.5" step="0.1" min="0"></div><button class="btn" onclick="saveWeight()">体重を保存</button></div></div>
-  <div class="card"><div class="section-title" style="margin:0 0 5px;font-size:15px">ジム・トレーニング</div><div class="small">種目を選んで、重量・回数・セット数を入力してね。</div>
+  <div class="card"><div class="section-title" style="margin:0 0 5px;font-size:15px">ジム・トレーニング</div><div class="small">野方店の動画で確認できた種目などから選んで、重量・回数・セット数を入力してね。回数は初期値15回だよ。</div>
     <div class="section-title" style="font-size:13px;margin:17px 0 6px">下半身</div><div class="chips" id="lowerChips"></div>
     <div class="section-title" style="font-size:13px;margin:12px 0 6px">上半身・体幹</div><div class="chips" id="upperChips"></div>
     <div class="section-title" style="font-size:13px;margin:12px 0 6px">有酸素運動</div><div class="chips" id="cardioChips"></div>
@@ -68,7 +69,7 @@ label{display:block;font-size:12px;color:#746a65;margin:0 0 6px}input,select{wid
 
 <section class="view" id="calendar">
   <div class="section-title">カレンダー</div>
-  <div class="card"><div class="header-row"><div class="month-nav"><button onclick="changeMonth(-1)">‹</button><b id="monthTitle"></b><button onclick="changeMonth(1)">›</button></div><div class="small">● ジム　● 体重</div></div><div class="calendar" id="calendarGrid"></div></div>
+  <div class="card"><div class="header-row"><div class="month-nav"><button onclick="changeMonth(-1)">‹</button><b id="monthTitle"></b><button onclick="changeMonth(1)">›</button></div><div class="calendar-legend"><span><i class="dot gym"></i> ジム</span><span><i class="dot weight"></i> 体重</span></div></div><div class="calendar" id="calendarGrid"></div></div>
   <div class="small" style="padding:0 5px">日付をタップすると、その日付で記録を入力できます。</div>
 </section>
 
@@ -87,8 +88,8 @@ label{display:block;font-size:12px;color:#746a65;margin:0 0 6px}input,select{wid
 <div class="toast" id="toast"></div>
 <script>
 const $=id=>document.getElementById(id);
-const lower=["レッグプレス","レッグカール","レッグエクステンション","アブダクション"];
-const upper=["ラットプルダウン","シーテッドロー","チェストプレス","アブドミナルクランチ","バックエクステンション"];
+const lower=["アークレッグプレス","リニアレッグプレス","レッグプレス","レッグエクステンション","シーテッドレッグカール","レッグカール","ヒップアブダクション","アブダクション","グルートドライブ"];
+const upper=["ラットプルダウン","シーテッドロー","アイソラテラルローイング","チェストプレス","ショルダープレス","ラテラルレイズ","アブドミナルクランチ","トーソーローテーション","アブドミナルベンチ","バックエクステンション","ケーブルカール"];
 const cardio=["トレッドミル","バイク","クロストレーナー"];
 let data={weights:[],workouts:[]}, selected={}, calendarDate=new Date();
 const todayISO=()=>{const d=new Date();return `${d.getFullYear()}-${String(d.getMonth()+1).padStart(2,'0')}-${String(d.getDate()).padStart(2,'0')}`};
@@ -97,7 +98,7 @@ function persist(){localStorage.setItem('bodyBalanceData',JSON.stringify(data));
 function toast(s){$('toast').textContent=s;$('toast').classList.add('show');setTimeout(()=>$('toast').classList.remove('show'),1900)}
 function showView(id){document.querySelectorAll('.view').forEach(x=>x.classList.toggle('active',x.id===id));document.querySelectorAll('.tabs button').forEach(x=>x.classList.toggle('active',x.dataset.view===id));if(id==='weight')drawChart('weightChart',true);if(id==='home')drawChart('homeChart',false);window.scrollTo({top:0,behavior:'smooth'})}
 function buildChips(id,items){$(id).innerHTML=items.map(n=>`<button class="chip" data-name="${n}" onclick="toggleExercise('${n}')">${n}</button>`).join('')}
-function toggleExercise(name){if(selected[name])delete selected[name];else selected[name]={name,kind:cardio.includes(name)?'cardio':'strength',kg:'',reps:'12',sets:'3',minutes:'20',speed:'4.5',incline:'6'};renderExerciseForms()}
+function toggleExercise(name){if(selected[name])delete selected[name];else selected[name]={name,kind:cardio.includes(name)?'cardio':'strength',kg:'',reps:'15',sets:'3',minutes:'20',speed:'4.5',incline:'6'};renderExerciseForms()}
 function renderExerciseForms(){document.querySelectorAll('.chip').forEach(b=>b.classList.toggle('selected',!!selected[b.dataset.name]));$('exerciseForms').innerHTML=Object.values(selected).map(x=>x.kind==='strength'?`
 <div class="exercise"><div class="exercise-head"><span>${x.name}</span><button class="btn ghost smallbtn" onclick="toggleExercise('${x.name}')">外す</button></div><div class="exercise-grid">
 <div><label>重量（kg）</label><input type="number" min="0" step="0.5" placeholder="例 30" value="${x.kg}" onchange="setExercise('${x.name}','kg',this.value)"></div>
@@ -127,6 +128,6 @@ ctx.beginPath();arr.forEach((p,i)=>i?ctx.lineTo(x(i),y(p.weight)):ctx.moveTo(x(i
 function drawCalendar(){let y=calendarDate.getFullYear(),m=calendarDate.getMonth();$('monthTitle').textContent=`${y}年${m+1}月`;let first=new Date(y,m,1).getDay(),days=new Date(y,m+1,0).getDate(),html=['日','月','火','水','木','金','土'].map(d=>`<div class="dayname">${d}</div>`).join('');for(let i=0;i<first;i++)html+='<div></div>';for(let d=1;d<=days;d++){let ds=`${y}-${String(m+1).padStart(2,'0')}-${String(d).padStart(2,'0')}`,g=data.workouts.some(w=>w.date===ds),w=data.weights.some(w=>w.date===ds);html+=`<button class="day ${ds===todayISO()?'today':''}" onclick="selectCalendarDate('${ds}')">${d}<div class="marks">${g?'<i class="dot gym"></i>':''}${w?'<i class="dot weight"></i>':''}</div></button>`}$('calendarGrid').innerHTML=html}
 function changeMonth(n){calendarDate.setMonth(calendarDate.getMonth()+n);drawCalendar()}
 function selectCalendarDate(ds){$('recordDate').value=ds;showView('record');toast(fmtDate(ds)+'を選択中')}
-load();$('todayLabel').textContent=new Date().toLocaleDateString('ja-JP',{month:'long',day:'numeric'});$('recordDate').value=todayISO();buildChips('lowerChips',lower);buildChips('upperChips',upper);buildChips('cardioChips',cardio);renderAll();window.addEventListener('resize',()=>{drawChart('homeChart',false);drawChart('weightChart',true)});if('serviceWorker'in navigator&&location.protocol.startsWith('http'))window.addEventListener('load',()=>navigator.serviceWorker.register('./sw.js').catch(()=>{}));
+load();$('todayLabel').textContent=new Date().toLocaleDateString('ja-JP',{month:'long',day:'numeric'});$('recordDate').value=todayISO();buildChips('lowerChips',lower);buildChips('upperChips',upper);buildChips('cardioChips',cardio);renderAll();window.addEventListener('resize',()=>{drawChart('homeChart',false);drawChart('weightChart',true)});if('serviceWorker'in navigator&&location.protocol.startsWith('http'))window.addEventListener('load',async()=>{try{const reg=await navigator.serviceWorker.register('./sw.js',{updateViaCache:'none'});await reg.update()}catch(e){}});
 </script>
 </body></html>
